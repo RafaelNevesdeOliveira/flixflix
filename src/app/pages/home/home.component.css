@@ -1,0 +1,121 @@
+
+/* MAIN */
+
+.mainMovie{
+  font-size: 16px;
+  background: linear-gradient(rgba(0,0,0,.50), rgba(0,0,0,.50)100%) ,url('https://images8.alphacoders.com/112/1125196.jpg');
+
+  background-size: cover;
+  height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  /* o Justify Content sempre segue a direção do flex-direction */
+  justify-content: center;
+  /* Se refere a linha horizontal */
+  align-items: flex-start;
+  margin-bottom: 20px;
+
+}
+
+.mainMovie .description{
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.title{
+  margin-top: 9%;
+  font-size: 40px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', Arial, Helvetica, sans-serif;
+}
+
+/* botoes */
+.buttons button{
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  color:white;
+
+  padding: 15px 30px;
+  margin-right: 15px;
+  font-size: 12px;
+
+  cursor: pointer;
+  transition: 0.3s ease all;
+}
+
+.buttons button:hover{
+  background-color: white;
+  color: black
+}
+
+.buttons i{
+  margin-right: 8px;
+}
+
+.container{
+  margin-left: 10px;
+}
+
+.mainMovie .container{
+  width: 70%;
+}
+
+.box-movie{
+  height:100%;
+  width: 100%;
+  display: block;
+}
+
+.carousel{
+  margin: 20px;
+}
+
+
+/* RESPONSIVIDADE */
+@media (max-width:700px) {
+  .mainMovie{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .mainMovie .container{
+    margin-top: 100px;
+    width: 85vw;
+  }
+
+  .title{
+    margin-top: 9%;
+    font-size: 32px;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', Arial, Helvetica, sans-serif;
+    opacity: 80%;
+  }
+
+  .mainMovie .description{
+    margin-top: 10px;
+    margin-bottom: 40px;
+    font-size: 10px;
+    text-align: center;
+    text-align: justify;
+    opacity: 80%;
+  }
+
+  header .container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .buttons button{
+    height: 65px;
+    text-align: center;
+  }
+}

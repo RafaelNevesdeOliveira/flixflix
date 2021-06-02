@@ -1,0 +1,37 @@
+<main>
+  <div class="mainMovie">
+    <div class="container">
+      <h3 class="title">HOMEM DE AÇO</h3>
+      <p class="description">
+        Um jovem menino aprende que tem poderes extraordinários e não é
+        desta Terra. Quando jovem, ele viaja para descobrir de onde veio e
+        para o quê foi enviado a fazer. Mas o herói nele deve emergir se
+        quiser salvar o mundo da aniquilação e se tornar o símbolo de
+        esperança para toda a humanidade.
+      </p>
+      <div class="buttons">
+        <button role="button" class="watch">
+          <i class="fas fa-play"></i>
+          ASSISTIR AGORA
+        </button>
+        <button role="button" class="moreInformation">
+          <i class="fas fa-info-circle"></i>
+          MAIS INFORMAÇÕES
+        </button>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+
+<div class="carousel">
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide *ngFor="let image of images">
+      <div class="slide">
+        <img src="{{ image }}" class="box-movie" alt="" />
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+</div>
+

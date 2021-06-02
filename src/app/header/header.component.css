@@ -1,0 +1,51 @@
+header .container{
+  display: flex;
+  flex-direction: row;
+  /* alinhamento vertical */
+  align-items: center;
+  /* alinhamento horizontal */
+  justify-content: space-between ;
+}
+
+header .logo{
+  color: var(--vermelho);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 40px;
+  display: flex;
+   text-shadow: 2px 2px #8f0404;
+}
+
+header .logo1{
+  font-size: 45px;
+}
+header .logo2{
+  font-size: 40px;
+}
+header .logo3{
+  font-size: 35px;
+}
+header .logo4{
+  font-size: 32px;
+}
+header .logo5{
+  font-size: 35px;
+}
+header .logo6{
+  font-size: 35px;
+}
+header .logo7{
+  font-size: 40px;
+}
+header .logo8{
+  font-size: 45px;
+}
+
+header nav a{
+  text-decoration: none;
+  color: #aaa;
+  margin-right:10px;
+}
+
+header nav a:hover{
+  color: #fff;
+}
