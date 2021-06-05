@@ -1,0 +1,34 @@
+{
+  "result": [
+    {
+      "_id": "60b6d774eb477a001d427e7d",
+      "title": "Dragon Ball",
+      "author": "Akira Toryama",
+      "linkImage": "",
+      "active": true,
+      "urlVideo": "https://www.youtube.com/watch?v=rovLs3lIjyo",
+      "duration": "1 hora",
+      "__v": 0
+    },
+    {
+      "_id": "60b6d775eb477a001d427e7e",
+      "title": "Dragon Ball",
+      "author": "Akira Toryama",
+      "linkImage": "",
+      "active": true,
+      "urlVideo": "https://www.youtube.com/watch?v=rovLs3lIjyo",
+      "duration": "1 hora",
+      "__v": 0
+    },
+    {
+      "_id": "60b6d776eb477a001d427e7f",
+      "title": "Dragon Ball",
+      "author": "Akira Toryama",
+      "linkImage": "",
+      "active": true,
+      "urlVideo": "https://www.youtube.com/watch?v=rovLs3lIjyo",
+      "duration": "1 hora",
+      "__v": 0
+    }
+  ]
+}
