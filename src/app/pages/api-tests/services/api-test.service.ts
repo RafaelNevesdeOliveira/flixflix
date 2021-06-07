@@ -13,7 +13,7 @@ import { retry, catchError, map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class ApiTestService {
-  API_URL = 'http://localhost:4500/api/v1/animes';
+  API_URL = 'https://rafaelnevesapi.azurewebsites.net/api/v1/animes';
 
   constructor(private httpClient: HttpClient) {}
 
