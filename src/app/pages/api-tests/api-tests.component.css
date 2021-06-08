@@ -23,3 +23,31 @@
 .containerTitle{
   color: black;
 }
+
+.container{
+  background: #fff;
+  border-radius: 8px;
+}
+
+.register{
+  padding-top: 20px;
+}
+
+.wrapper{
+  background-color: rgb(104, 107, 107);
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.add-anime{
+  background-color:  #141414;
+  padding: 10px
+}
+
+#URL{
+  background-color: rgb(197, 197, 197);
+  padding: 5px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #141414;
+  font-weight: 600;
+}

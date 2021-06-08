@@ -7,7 +7,7 @@ import {
   HttpHeaders,
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { retry, catchError, map } from 'rxjs/operators';
+import { retry, catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -32,19 +32,19 @@ export class ApiTestService {
   }
 
   getAnimesById(_id: number): Observable<Animes> {
-    return this.httpClient.get<Animes>(this.API_URL + '/' + _id).pipe(
-      retry(2),
-      catchError(this.handleError)
-    );
+    return this.httpClient
+      .get<Animes>(this.API_URL + '/' + _id)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  createAnimes(anime: Animes) {
+    return this.httpClient.post(this.API_URL, anime)
   }
 
   saveAnimes(anime: Animes): Observable<Animes> {
     return this.httpClient
       .post<Animes>(this.API_URL, JSON.stringify(anime), this.httpOptions)
-      .pipe(
-        retry(2),
-        catchError(this.handleError)
-      );
+      .pipe(retry(2), catchError(this.handleError));
   }
 
   updateAnimes(anime: Animes): Observable<Animes> {
@@ -54,10 +54,7 @@ export class ApiTestService {
         JSON.stringify(anime),
         this.httpOptions
       )
-      .pipe(
-        retry(1),
-        catchError(this.handleError)
-      );
+      .pipe(retry(1), catchError(this.handleError));
   }
 
   deleteAnimes(anime: Animes) {
@@ -72,14 +69,13 @@ export class ApiTestService {
 
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';
-    if(error.error instanceof ErrorEvent){
+    if (error.error instanceof ErrorEvent) {
       errorMessage = error.error.message;
-    }else{
-      errorMessage = `Código do erro: ${error.status},` + `mensagem: ${error.message}`;
+    } else {
+      errorMessage =
+        `Código do erro: ${error.status},` + `mensagem: ${error.message}`;
     }
     console.log(errorMessage);
-    return throwError(errorMessage)
+    return throwError(errorMessage);
   }
-
-
 }

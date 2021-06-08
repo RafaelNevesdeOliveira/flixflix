@@ -7,4 +7,5 @@ export class Animes{
   active: boolean;
   urlVideo: string;
   duration: string;
+  push: any;
 }

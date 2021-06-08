@@ -1,56 +1,125 @@
-<nav aria-label="breadcrumb">
-</nav>
-<div class="container">
-  <div class="card list-anime">
-    <h5 class="containerTitle">Lista de séries</h5>
-    <div class="card-body">
+<section class="mt-5">
+  <div class="container List">
+    <h5>Lista</h5>
+    <div class="table-responsive">
       <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Titulo</th>
-              <th scope="col">Autor</th>
-              <th scope="col">URL</th>
-              <th scope="col">Duração</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let anime of animes">
-              <td>{{anime.title}}</td>
-              <td>{{anime.author}}</td>
-              <a href="{{anime.urlVideo}}"><td>{{anime.urlVideo}}</td></a>
-              <td>{{anime.duration}}</td>
-              <td>
-                <button type="button" class="btn btn-warning btn-sm" (click)="editAnimes(anime)">Editar</button>
-                <button type="button" class="btn btn-danger btn-sm ml-1" (click)="deleteAnimes(anime)">Deletar</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <thead>
+          <tr>
+            <th scope="col">Titulo</th>
+            <th scope="col">Autor</th>
+            <th scope="col">URL</th>
+            <th scope="col">Duração</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let anime of animes">
+            <td>{{ anime.title }}</td>
+            <td>{{ anime.author }}</td>
+            <a href="{{ anime.urlVideo }}" target="_blank"
+              ><td id="URL">{{ anime.urlVideo }}</td></a
+            >
+            <td>{{ anime.duration }}</td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="editAnimes(anime)"
+              >
+                Editar
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger btn-sm ml-1"
+                (click)="deleteAnimes(anime)"
+              >
+                Deletar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+</section>
+<div class="register">
+    <section>
+      <div class="container">
+        <h5>Adicionar/ Editar</h5>
+        <form
+          method="post"
+          #form="ngForm"
+          (ngSubmit)="createAnimes(form)"
+          (ngSubmit)="f.form.valid && saveAnimes(f)"
+          #f="ngForm"
+          novalidate
+        >
+          <div class="form-group">
+            <label for="nome">Titulo</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              class="form-control"
+              placeholder="Título"
+              [(ngModel)]="anime.title"
+              required
+            />
+          </div>
 
-  <div class="card add-anime">
-      <h5 class="containerTitle">Adicionar/Atualizar série</h5>
-      <div class="card-body">
-          <form id="add-form" (ngSubmit)="f.form.valid && saveAnimes(f)" #f="ngForm" novalidate>
-            <div class="form-group">
-                <label class="containerTitle" for="title">Título</label>
-                <input type="text" [(ngModel)]="anime.title" id="title" name="title" #title="ngModel" required class="form-control" placeholder="Digite o titleo">
-                <div  class="invalid-feedback">
-                    <div *ngIf="title.errors.required">Título é obrigatório</div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="containerTitle" for="author">Autor</label>
-                <input type="text" [(ngModel)]="anime.author" id="author" name="author" #author="ngModel" required class="form-control" placeholder="Digite o autor">
-                <div >
-                    <div *ngIf="author.errors.required">Autor é obrigatória</div>
-                </div>
-            </div>
+          <div class="form-group">
+            <label for="author">Autor</label>
+            <input
+              type="author"
+              id="author"
+              name="author"
+              class="form-control"
+              placeholder="Author"
+              [(ngModel)]="anime.author"
+              required
+              author
+            />
+          </div>
 
-            <button type="submit" class="btn btn-primary btn-add-anime" (click)="saveAnimes(f)">Salvar</button>
-            <button type="reset" class="btn btn-secondary btn-add-anime" (click)="cleanForm(f)">Cancelar</button>
-          </form>
+          <div class="form-group">
+            <label for="author">URL vídeo</label>
+            <input
+              type="urlVideo"
+              id="urlVideo"
+              name="urlVideo"
+              class="form-control"
+              placeholder="URL"
+              [(ngModel)]="anime.urlVideo"
+              required
+              author
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="duration">E-mail</label>
+            <input
+              type="duration"
+              id="duration"
+              name="duration"
+              class="form-control"
+              placeholder="Duração"
+              [(ngModel)]="anime.duration"
+              required
+              author
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary" (click)="saveAnimes(f)">
+            Salvar
+          </button>
+          <button
+            type="reset"
+            class="btn btn-secondary btn-add-anime"
+            (click)="cleanForm(f)"
+          >
+            Cancelar
+          </button>
+        </form>
       </div>
-    </div>
-</div>
+    </section>
+  </div>
+

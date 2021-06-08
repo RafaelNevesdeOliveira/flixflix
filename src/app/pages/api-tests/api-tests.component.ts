@@ -2,7 +2,7 @@ import { List } from './models/list';
 import { Animes } from './models/animes';
 import { ApiTestService } from './services/api-test.service';
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormGroup, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-api-tests',
@@ -26,6 +26,13 @@ export class ApiTestsComponent implements OnInit {
         this.cleanForm(form);
       })
     }
+  }
+
+  createAnimes(form: FormGroup){
+    this.apiService.createAnimes(this.anime).subscribe(res => {
+      this.anime.push(res);
+      form.reset();
+    });
   }
 
   getAnimes(){
